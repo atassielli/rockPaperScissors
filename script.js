@@ -9,3 +9,8 @@ function computerPlay(comp) {
 const array = ['Rock', 'Paper', 'Scissors'];
 const computerChoice = computerPlay(array);
 console.log(computerChoice);
+
+//Make a prompt that asks users for their selection from rock, paper, and scissors//
+
+let playerChoice = prompt('Choose Rock, Paper, or Scissors');
+
