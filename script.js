@@ -25,26 +25,29 @@ console.log(playerChoice);
 //Create function that compares computerChoice with playerChoice to determine a winner//
 
 let result;
-if ((computerChoice == 'rock') && (playerChoice.toString() == 'paper')) {
-    result = 'Player wins, congratulations';
-} else if((computerChoice == 'rock') && (playerChoice.toString() == 'scissors')) {
-     result = 'Conputer wins, better luck next time';
-} else if((computerChoice == 'paper') && (playerChoice.toString() == 'rock')) {
-    result = 'Conputer wins, better luck next time';
-} else if((computerChoice == 'paper') && (playerChoice.toString() == 'scissors')) {
-    result = 'Player wins, congratulations';
-} else if((computerChoice == 'scissors') && (playerChoice.toString() == 'rock')) {
-    result = 'Player wins, congratulations';
- } else if((computerChoice == 'scissors') && (playerChoice.toString() == 'paper')) {
-    result = 'Conputer wins, better luck next time';
-} else if((computerChoice == 'rock') && (playerChoice.toString() == 'rock')) {
-    result = 'Tie, please try again';
-} else if((computerChoice == 'paper') && (playerChoice.toString() == 'paper')) {
-     result = 'Tie, please try again';
-} else if((computerChoice == 'scissors') && (playerChoice.toString() == 'scissors')) {
-    result = 'Tie, please try again';
+
+function playRound(computerChoice, playerChoice){
+    if ((computerChoice == 'rock') && (playerChoice.toString() == 'paper')) {
+        result = 'Player wins, congratulations';
+    } else if((computerChoice == 'rock') && (playerChoice.toString() == 'scissors')) {
+        result = 'Conputer wins, better luck next time';
+    } else if((computerChoice == 'paper') && (playerChoice.toString() == 'rock')) {
+        result = 'Conputer wins, better luck next time';
+    } else if((computerChoice == 'paper') && (playerChoice.toString() == 'scissors')) {
+        result = 'Player wins, congratulations';
+    } else if((computerChoice == 'scissors') && (playerChoice.toString() == 'rock')) {
+        result = 'Player wins, congratulations';
+    } else if((computerChoice == 'scissors') && (playerChoice.toString() == 'paper')) {
+        result = 'Conputer wins, better luck next time';
+    } else if((computerChoice == 'rock') && (playerChoice.toString() == 'rock')) {
+        result = 'Tie, please try again';
+    } else if((computerChoice == 'paper') && (playerChoice.toString() == 'paper')) {
+        result = 'Tie, please try again';
+    } else if((computerChoice == 'scissors') && (playerChoice.toString() == 'scissors')) {
+        result = 'Tie, please try again';
+    }
+    return result;
 }
 
-
-console.log(result);    
+console.log(playRound(computerChoice, playerChoice));    
 
