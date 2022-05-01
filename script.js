@@ -42,11 +42,36 @@ function validate(choice) {
 
 //Create function that compares computerChoice with playerChoice to determine a winner//
 
+let winner;
 function playRound (computerChoice, playerChoice) {
+    if (computerChoice === playerChoice) {
+        winner = 'Tie';
+    } else if ((computerChoice === 'rock' && playerChoice === 'scissors') || (computerChoice === 'scissors' && playerChoice === 'paper') || (computerChoice === 'paper' && playerChoice === 'rock')){
+        winner = 'Computer Wins';
+    } else {
+        winner = 'Player Wins';
+    }
+    console.log(winner);
+    return winner;
 
 }
 
+
 //Create a for loop that plays 5 rounds of the game//
 
+function playGame () {
+    const user = playerInput().toString();
+    const computer = computerPlay(array).toString();
+    const win = playRound(computer, user);
+}
 
-//Use break to stop the game if computer or user wins 3 or more times//
+
+
+function game () {
+    for (i = 1; i <= 5; i++) {
+        playGame();
+    }
+}
+
+game();
+
