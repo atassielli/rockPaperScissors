@@ -6,48 +6,47 @@ function computerPlay(comp) {
     return compPlay
 }
 
-let array = ['Rock', 'Paper', 'Scissors'];
+let array = ['rock', 'paper', 'scissors'];
 let computerChoice = computerPlay(array).toLowerCase();
 console.log(computerChoice);
 
 //Make a prompt that asks users for their selection from rock, paper, and scissors//
 
-let makeSelection = "Choose Rock, Paper, or Scissors";
-
-function userChoice() {
-    return prompt(makeSelection.toString());
+function playerInput () {
+    let input = prompt('Type in rock, paper, or scissors');
+    while (input == null) {
+        input = prompt('Type in rock paper, or scissors');
+    } 
+    if (validate(input) == true) {
+        input = input.toLowerCase();
+    }  else if (validate(input) == false) {
+        input = prompt('Type in rock, paper, or scissors. Case does not matter but spelling does');
+    }
+    return input;
 }
 
-let playerChoice = userChoice().toString().toLowerCase();
-console.log(playerChoice);
+let playerChoice = playerInput().toString();
+console.log(playerChoice)
+
+
+
+//Create function that validates the users input is rock, paper, or scissors//
+
+function validate(choice) {
+    return array.includes(choice);
+}
+
+
+
 
 
 //Create function that compares computerChoice with playerChoice to determine a winner//
 
-let result;
+function playRound (computerChoice, playerChoice) {
 
-function playRound(computerChoice, playerChoice){
-    if ((computerChoice == 'rock') && (playerChoice.toString() == 'paper')) {
-        result = 'Player wins, congratulations';
-    } else if((computerChoice == 'rock') && (playerChoice.toString() == 'scissors')) {
-        result = 'Conputer wins, better luck next time';
-    } else if((computerChoice == 'paper') && (playerChoice.toString() == 'rock')) {
-        result = 'Conputer wins, better luck next time';
-    } else if((computerChoice == 'paper') && (playerChoice.toString() == 'scissors')) {
-        result = 'Player wins, congratulations';
-    } else if((computerChoice == 'scissors') && (playerChoice.toString() == 'rock')) {
-        result = 'Player wins, congratulations';
-    } else if((computerChoice == 'scissors') && (playerChoice.toString() == 'paper')) {
-        result = 'Conputer wins, better luck next time';
-    } else if((computerChoice == 'rock') && (playerChoice.toString() == 'rock')) {
-        result = 'Tie, please try again';
-    } else if((computerChoice == 'paper') && (playerChoice.toString() == 'paper')) {
-        result = 'Tie, please try again';
-    } else if((computerChoice == 'scissors') && (playerChoice.toString() == 'scissors')) {
-        result = 'Tie, please try again';
-    }
-    return result;
 }
 
-console.log(playRound(computerChoice, playerChoice));    
+//Create a for loop that plays 5 rounds of the game//
 
+
+//Use break to stop the game if computer or user wins 3 or more times//
