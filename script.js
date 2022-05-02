@@ -3,12 +3,11 @@
 function computerPlay(comp) {
     const options = Math.floor(Math.random() * comp.length);
     const compPlay = comp[options];
-    return compPlay
+    return compPlay;
 }
 
 let array = ['rock', 'paper', 'scissors'];
 let computerChoice = computerPlay(array).toLowerCase();
-console.log(computerChoice);
 
 //Make a prompt that asks users for their selection from rock, paper, and scissors//
 
@@ -26,19 +25,12 @@ function playerInput () {
 }
 
 let playerChoice = playerInput().toString();
-console.log(playerChoice)
-
-
 
 //Create function that validates the users input is rock, paper, or scissors//
 
 function validate(choice) {
     return array.includes(choice);
 }
-
-
-
-
 
 //Create function that compares computerChoice with playerChoice to determine a winner//
 
@@ -51,21 +43,18 @@ function playRound (computerChoice, playerChoice) {
     } else {
         winner = 'Player Wins';
     }
-    console.log(winner);
+    console.log('Round ', (i),': ', "Computer Choice: ", computerChoice, " Player Choice: ", playerChoice, " Result: ", winner);
     return winner;
 
 }
 
-
-//Create a for loop that plays 5 rounds of the game//
+//Create a function with a for loop that plays 5 rounds of the game//
 
 function playGame () {
     const user = playerInput().toString();
     const computer = computerPlay(array).toString();
     const win = playRound(computer, user);
 }
-
-
 
 function game () {
     for (i = 1; i <= 5; i++) {
@@ -74,4 +63,3 @@ function game () {
 }
 
 game();
-
