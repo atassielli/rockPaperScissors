@@ -11,18 +11,37 @@ const selectionButtons = document.querySelector('.selectionButtons');
 
 const rockButton = document.createElement('button');
 rockButton.classList.add('rock');
-rockButton.textContent = 'rock';
+rockButton.textContent = 'Rock';
+rockButton.style.marginLeft = '5px';
 selectionButtons.appendChild(rockButton);
 
 const paperButton = document.createElement('button');
 paperButton.classList.add('paper');
-paperButton.textContent = 'paper';
+paperButton.textContent = 'Paper';
+paperButton.style.marginLeft = '5px';
 selectionButtons.appendChild(paperButton);
 
 const scissorsButton = document.createElement('button');
 scissorsButton.classList.add('scissors');
-scissorsButton.textContent = 'scissors';
+scissorsButton.textContent = 'Scissors';
+scissorsButton.style.marginLeft = '5px';
 selectionButtons.appendChild(scissorsButton);
+
+const startOverButton = document.createElement('button');
+startOverButton.classList.add('startOver')
+startOverButton.textContent = 'Start Over';
+startOverButton.style.marginLeft = '5px';
+selectionButtons.appendChild(startOverButton);
+
+const chooseStartOver = document.querySelector('.startOver');
+
+function startOver() {
+    location.reload();
+}
+
+chooseStartOver.addEventListener('click', function (e) {
+    startOver();
+})
 
 const choseRock = document.querySelector('.rock');
 const chosePaper = document.querySelector('.paper');
@@ -68,10 +87,10 @@ function playRound (computerChoice, playerChoice) {
         }
         const results = document.querySelector('.results');
 
-        compChoice.textContent = ('Computer Chooses: ' + computerChoice);
+        compChoice.textContent = ('Computer Chooses: ' + computerChoice.toUpperCase());
         results.appendChild(compChoice);
 
-        playChoice.textContent = ('Player Chooses: ' + playerChoice);
+        playChoice.textContent = ('Player Chooses: ' + playerChoice.toUpperCase());
         results.appendChild(playChoice);
 
         notifyWin.textContent = ('Round Result: ' + winner);
